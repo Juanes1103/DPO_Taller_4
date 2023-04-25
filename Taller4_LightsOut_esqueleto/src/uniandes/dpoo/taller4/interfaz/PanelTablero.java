@@ -19,6 +19,11 @@ public class PanelTablero extends JPanel implements ActionListener{
 		
 //		paint(null);
 		
+		Rectangle2D.Double tablero = new Rectangle2D.Double(0, 0, 100, 100);
+		
+		tablero.setFrame(tablero);
+		
+		
 		setVisible(true);
 		
 	}

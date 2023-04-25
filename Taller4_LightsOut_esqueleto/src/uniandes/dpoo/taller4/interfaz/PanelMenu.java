@@ -1,5 +1,8 @@
 package uniandes.dpoo.taller4.interfaz;
 
+import uniandes.dpoo.taller4.modelo.Top10;
+import uniandes.dpoo.taller4.modelo.Tablero;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -7,6 +10,8 @@ import javax.swing.*;
 public class PanelMenu extends JPanel implements ActionListener{
 
 	private Pantalla padre;
+	private Tablero tablero;
+	private Top10 top10;
 	
 	public PanelMenu(Pantalla padre) {
 		
@@ -52,6 +57,23 @@ public class PanelMenu extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String comando = e.getActionCommand();
+		if(comando == "Nuevo") {
+			
+			tablero.desordenar(ABORT);
+			
+		} else if (comando == "REINICIAR") {
+			
+			tablero.reiniciar();
+			
+		} else if (comando == "TOP-10") {
+			
+			top10.darRegistros();
+			
+		} else {
+			
+			
+		}
+		
 		JOptionPane.showMessageDialog(padre, "Ha presionado el botón" + comando + "!");
 		
 	}
